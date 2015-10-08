@@ -1,0 +1,6 @@
+<div class="alert alert-info" ng-if="notConfigured()">
+    Please configure the WYSIWYG widget
+</div>
+<div ng-if="configured()" ng-bind-html="config.content">
+
+</div>

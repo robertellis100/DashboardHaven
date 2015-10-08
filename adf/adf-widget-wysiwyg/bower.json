@@ -1,0 +1,41 @@
+{
+  "name": "adf-widget-wysiwyg",
+  "version": "0.1.4",
+  "main": "dist/adf-widget-wysiwyg.js",
+  "repository": "https://github.com/ivan-saorin/adf-widget-wysiwyg.git",
+  "license": "MIT",
+  "authors": [
+    "Ivan Saorin"
+  ],
+  "ignore": [
+    "bower.json",
+    ".bowerrc",
+    ".jshintrc",
+    ".gitignore",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+    "components",
+    "src"
+  ],
+  "keywords": [
+    "dashboard",
+    "widget",
+    "adf",
+    "adf-widget",
+    "markdown",
+    "wysiwyg"
+  ],
+  "description": "WYSISYG widget for the angular-dashboard-framework based on Text Angular component.",
+  "dependencies": {
+    "angular-dashboard-framework": "0.9.0",
+    "textAngular": "~1.4.3",
+    "font-awesome": "~4.4.0"
+  },
+  "devDependencies": {
+    "angular-local-storage": "0.1.5"
+  },
+  "resolutions": {
+    "angular": "1.2.28"
+  }
+}
