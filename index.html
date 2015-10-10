@@ -1,71 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+
+<html ng-app="dashboardHaven">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>DashBoardHaven</title>
-    <!-----MDL------>
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="app.css" rel="stylesheet">
 
+    <title>Dashboard Haven</title>
 
+    <!-- styles -->
+    <link href="adf/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="adf/angular-dashboard-framework/dist/angular-dashboard-framework.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="adf/adf-widget-clock/dist/adf-widget-clock.min.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body ng-controller="MainController as vm">
+    <br />
     <div class="container">
-        <h1></h1>
-        <!-- Wide card with share menu button -->
-        <style>
-            .demo-card-wide.mdl-card {
-                width: 512px;
-            }
-            
-            .demo-card-wide > .mdl-card__title {
-                color: #fff;
-                height: 176px;
-                background: url('http://www.sciencesortof.com/wp-content/uploads/2015/04/218_space_beer.jpg') center / cover;
-            }
-            
-            .demo-card-wide > .mdl-card__menu {
-                color: #fff;
-            }
-
-        </style>
-
-
-
-        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Welcome</h2>
+        <div class="panel-primary">
+            <div class="panel-heading">
+                <p>
+                    <span class="float-left inlineblock">Dashboard Haven</span>
+                    <span class="float-right inlineblock">{{1 + 1}} | Angular Working? {{vm.working}}</span>
+                </p>
             </div>
-            <div class="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Get Started
-    </a>
-            </div>
-            <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">share</i>
-                </button>
+            <div class="panel-body panel-widget">
+                <!-- We can create our own widgets by using https://github.com/sdorra/generator-adf-widget -->
+                <adf-dashboard name="mydashboard" collapsible="true" structure="6-6" adf-model="model" />
             </div>
         </div>
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
-        <script src="app.js"></script>
     </div>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="adf/Sortable/Sortable.js"></script>
+    <script type="text/javascript" src="adf/angular-bootstrap/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="adf/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="adf/angular-dashboard-framework/dist/angular-dashboard-framework.js"></script>
+    <script type="text/javascript" src="adf/adf-structures-base/dist/adf-structures-base.min.js"></script>
+    <script type="text/javascript" src="adf/moment/moment.js"></script>
+    <script type="text/javascript" src="adf/adf-widget-clock/dist/adf-widget-clock.min.js"></script>
+    <script type="text/javascript" src="adf/adf-widget-weather/dist/adf-widget-weather.min.js"></script>
+    <script type="text/javascript" src="adf/adf-widget-news/dist/adf-widget-news.min.js"></script>
+    <!-- Module -->
+    <script src="js/app.js"></script>
+
 </body>
 
 </html>

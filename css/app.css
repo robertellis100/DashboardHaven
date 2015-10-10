@@ -1,0 +1,16 @@
+body {
+    background-color:lightskyblue;
+}
+.panel-widget {
+    background-color:gainsboro;
+}
+.inlineblock {
+    display:inline-block;
+}
+.float-left {
+    float:left;
+}
+.float-right {
+    float:right;
+}
+
