@@ -1,0 +1,12 @@
+<div>
+  <form role="form">
+    <div class="form-group">
+      <label for="sample">Gather information about your investements {{test}}</label>
+      <input type="text" class="form-control" id="sample" ng-model="ticker" placeholder="Enter Company Ticker">
+      <button ng-click="getCompanyByTicker()" class="btn btn-primary">Get Info!</button>
+    </div>
+  </form>
+  <div>
+    <h1>{{investment.name}}</h1>
+  </div>
+</div>

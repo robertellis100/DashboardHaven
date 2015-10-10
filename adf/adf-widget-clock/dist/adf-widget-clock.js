@@ -35,6 +35,13 @@ angular.module('adf.widget.clock', ['adf.provider'])
         controller: 'clockController',
         controllerAs: 'clock',
         config: {
+          datePatterns: [{
+            pretty: '1980-12-31',
+            pattern: 'YYYY-MM-DD'
+          },{
+            pretty: 'December 31, 1980',
+            pattern: 'MMMM DD, YYYY'
+          }],
           timePattern: 'HH:mm:ss',
           datePattern: 'YYYY-MM-DD'
         },
@@ -63,5 +70,5 @@ angular.module('adf.widget.clock', ['adf.provider'])
     });
   }]);
 
-angular.module("adf.widget.clock").run(["$templateCache", function($templateCache) {$templateCache.put("{widgetsPath}/clock/src/edit.html","<form role=form><div class=form-group><label for=time>Time pattern</label> <input type=text class=form-control id=time ng-model=config.timePattern></div><div class=form-group><label for=date>Date pattern</label> <input type=text class=form-control id=date ng-model=config.datePattern></div><p class=text-info>For the list of possible patterns, please have a look at <a target=_blank href=\"http://momentjs.com/docs/#/displaying/\">moment.js documentation</a></p></form>");
+angular.module("adf.widget.clock").run(["$templateCache", function($templateCache) {$templateCache.put("{widgetsPath}/clock/src/edit.html","<form role=form><div class=form-group><label for=time>Time pattern</label> <input type=text class=form-control id=time ng-model=config.timePattern></div><div class=form-group><label for=date>Date pattern</label><select ng-model=config.datePattern ng-options=\"date.pattern as date.pretty for date in config.datePatterns\"></select><input type=text class=form-control id=date ng-model=config.datePattern></div><p class=text-info>For the list of possible patterns, please have a look at <a target=_blank href=\"http://momentjs.com/docs/#/displaying/\">moment.js documentation</a></p></form>");
 $templateCache.put("{widgetsPath}/clock/src/view.html","<div class=clock><div class=clock-time>{{clock.time}}</div><div class=clock-date>{{clock.date}}</div></div>");}]);})(window);
