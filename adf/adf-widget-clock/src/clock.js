@@ -34,6 +34,13 @@ angular.module('adf.widget.clock', ['adf.provider'])
         controller: 'clockController',
         controllerAs: 'clock',
         config: {
+          datePatterns: [{
+            pretty: '1980-12-31',
+            pattern: 'YYYY-MM-DD'
+          },{
+            pretty: 'December 31, 1980',
+            pattern: 'MMMM DD, YYYY'
+          }],
           timePattern: 'HH:mm:ss',
           datePattern: 'YYYY-MM-DD'
         },
