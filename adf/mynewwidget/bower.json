@@ -1,0 +1,29 @@
+{
+  "name": "adf-widget-thingtodelete",
+  "version": "0.1.0",
+  "main": "dist/adf-widget-thingtodelete.js",
+  "ignore": [
+    "bower.json",
+    ".bowerrc",
+    ".jshintrc",
+    ".gitignore",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+    "components",
+    "src"
+  ],
+  "keywords": [
+    "dashboard",
+    "widget",
+    "adf",
+    "adf-widget"
+  ],
+  "description": "dus stuff almd things",
+  "dependencies": {
+    "angular-dashboard-framework": "0.8.0"
+  },
+  "devDependencies": {
+    "angular-local-storage": "0.1.5"
+  }
+}
