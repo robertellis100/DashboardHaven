@@ -30,8 +30,8 @@ angular.module('adf.widget.news', ['adf.provider'])
   .config(["dashboardProvider", function(dashboardProvider){
     dashboardProvider
       .widget('news', {
-        title: 'News',
-        description: 'Displays a RSS/Atom feed',
+          title: 'News',
+          description: 'Displays a RSS/Atom feed',
         templateUrl: '{widgetsPath}/news/src/view.html',
         controller: 'newsCtrl',
         resolve: {
@@ -65,8 +65,8 @@ angular.module('adf.widget.news', ['adf.provider'])
       }
     };
   }])
-  .controller('newsCtrl', ["$scope", "feed", function($scope, feed){
-    $scope.feed = feed;
+    .controller('newsCtrl', ["$scope", "feed", function ($scope, feed) {
+          $scope.feed = feed;
   }]);
 
 angular.module("adf.widget.news").run(["$templateCache", function($templateCache) {$templateCache.put("{widgetsPath}/news/src/edit.html","<form role=form><div class=form-group><label for=url>Feed url</label> <input type=url class=form-control id=url ng-model=config.url placeholder=\"Enter feed url\"></div></form>");
