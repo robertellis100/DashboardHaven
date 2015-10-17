@@ -30,13 +30,13 @@ angular.module('adf.widget.news', ['adf.provider'])
     dashboardProvider
       .widget('news', {
         title: 'News',
-        description: 'Displays a RSS/Atom feed',
+        description: 'Displays an RSS/Atom feed',
         templateUrl: '{widgetsPath}/news/src/view.html',
         controller: 'newsCtrl',
         resolve: {
           feed: function(newsService, config){
             if (config.url){
-              return newsService.get(config.url);
+                return newsService.get(config.url);
             }
           }
         },
