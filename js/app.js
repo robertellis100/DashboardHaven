@@ -2,10 +2,15 @@ var app = angular.module('dashboardHaven', ['adf', 'adf.structures.base', 'adf.w
 
 app.controller('MainController', MainController) 
 
-function MainController($timeout) {
+function MainController($timeout, $rootScope) {
 
     var vm = this; //using vm to make things easier
     vm.working = "Yes";
+    vm.model = getFromStorage();
+    $rootScope.$on('adfDashboardChanged', function (e, name, model) {
+        var sLayout = JSON.stringify(model);
+        localStorage.setItem(name, sLayout);
+    });
 
     vm.addToNewsTitle = "";
 
@@ -22,6 +27,14 @@ function MainController($timeout) {
                 }
             }
         }
+    }
+
+    function getFromStorage() {
+        //get from local storage
+        //parse the json back into an object
+        //return the object.
+        return JSON.parse(localStorage.getItem("mydashboard"));
+
     }
     //logStuff(vm);
     //logStuff(app);
