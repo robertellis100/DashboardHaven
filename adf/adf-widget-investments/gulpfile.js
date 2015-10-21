@@ -15,7 +15,7 @@ var annotateOptions = {
 
 var templateOptions = {
   root: '{widgetsPath}/adf-widget-investments/src',
-  module: 'adf.widget.adf-widget-investments'
+  module: 'adf.widget.investments'
 };
 
 /** lint **/
