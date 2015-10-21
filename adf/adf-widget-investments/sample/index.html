@@ -50,9 +50,9 @@
 
     <script type="text/javascript">
       angular
-       .module('adfWidgetSample', ['adf', 'adf.widget.adf-widget-investments', 'LocalStorageModule'])
+       .module('adfWidgetSample', ['adf', 'adf.widget.investments', 'LocalStorageModule'])
        .config(function(dashboardProvider, localStorageServiceProvider){
-         localStorageServiceProvider.setPrefix('adf.adf-widget-investments');
+         localStorageServiceProvider.setPrefix('adf.investments');
          dashboardProvider.structure('4-8', {
             rows: [{
               columns: [{
@@ -75,7 +75,7 @@
               }, {
                 styleClass: 'col-md-8',
                 widgets: [{
-                  type: 'adf-widget-investments',
+                  type: 'investments',
                   title: 'Investment Analyzer',
                   config: {}
                 }]
@@ -91,7 +91,7 @@
          });
        });
     </script>
-    <script src="/src/investment-controller.js"></script>
     <script src="/src/RequestService.js"></script>
+    <script src="/src/request-controller.js"></script>
   </body>
 </html>
