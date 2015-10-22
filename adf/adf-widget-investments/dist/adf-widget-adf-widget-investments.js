@@ -15,7 +15,7 @@ var app = angular.module('adf.widget.investments', ['adf.provider'])
 angular.module("adf.widget.investments").run(["$templateCache", function($templateCache) {$templateCache.put("{widgetsPath}/adf-widget-investments/src/edit.html","<div><form role=form><div class=form-group><label for=sample>Gather information about your investements {{test}}</label> <input type=text class=form-control id=sample ng-model=ticker placeholder=\"Enter Company Ticker\"> <button ng-click=getCompanyByTicker() class=\"btn btn-primary\">Get Info!</button></div></form><div><h1>{{investment.name}}</h1></div></div>");
 $templateCache.put("{widgetsPath}/adf-widget-investments/src/view.html","<div ng-controller=RequestController><div ng-if=investment><h5>{{investment.name.substr(0,investment.name.indexOf(\'(\'))}}</h5><p>As of {{investment.data[0][0] | date:\'dd/MM/yyyy\'}} {{investment.dataset_code}} closed at a price of {{investment.data[0][11] | currency}} and had a volume of {{investment.data[0][12] | number:0}}.</p></div><form role=form><div class=form-group><input type=text class=form-control id=sample ng-model=ticker placeholder=\"Enter Company Name or Ticker\"> <button ng-click=getCompanyByTicker() class=\"btn btn-primary\">Get Info!</button></div></form></div>");}]);
 var app = angular.module('adf.widget.investments');
-app.service('RequestController', RequestController);
+app.controller('RequestController', RequestController);
 
 
 function RequestController(RequestService, $scope){

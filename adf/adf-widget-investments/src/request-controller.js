@@ -1,5 +1,5 @@
 var app = angular.module('adf.widget.investments');
-app.service('RequestController', RequestController);
+app.controller('RequestController', RequestController);
 
 
 function RequestController(RequestService, $scope){
