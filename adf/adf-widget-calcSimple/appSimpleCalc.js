@@ -1,8 +1,51 @@
 ﻿!function () {
     "use strict";
 
-    //var calcSimpleApp = angular.module('calcSimpleApp', ['calcSimpleModule']);
-    //var calcSimpleModule = angular.module('calcSimpleModule', []);
+    var calcSimpleModel = {
+        result: 0, // Holds the actual result in memory
+        operation: "", // add, subtract, multiply and divide
+        curNbr1: "0", c1: false, d1: false, // flag that curNbr1 input and decimal have been provided
+        curNbr2: "0", c2: false, d2: false, // flag that curNbr2 input and decimal have been provided
+        curDisplay: "", // Shows the input string
+        curResult: "", // Shows the full input and result
+        keydownkeycode: "",
+        keyupkeycode: "",
+        keypresskeycode: "",
+        reset: function () {
+            this.result = 0;
+            this.operation = "";
+            this.curNbr1 = "0"; this.c1 = false; this.d1 = false;
+            this.curNbr2 = "0"; this.c2 = false; this.d2 = false;
+            this.curDisplay = "";
+            this.curResult = "";
+        },
+        setOperation: function (operationToSet) {
+            if (this.c1 && this.c2) {
+                this.curNbr1 = this.result.toString();
+                this.c1 = true;
+                this.result = 0;
+                this.operation = operationToSet;
+                this.curNbr2 = "0"; this.c2 = false; this.d2 = false;
+                this.curDisplay = "";
+                this.curResult = this.curNbr1 + " " + this.operation + " ";
+            }
+            if (this.operation === "" && !this.c1 && !this.c2 && this.curNbr1 !== "0") {
+                this.operation = operationToSet;
+                this.c1 = true;
+                this.curDisplay = "";
+                this.curResult += " " + this.operation + " ";
+            }
+        },
+        calculate: function () {
+            switch (this.operation) {
+                case "+": this.result = parseFloat(this.curNbr1) + parseFloat(this.curNbr2); break;
+                case "-": this.result = parseFloat(this.curNbr1) - parseFloat(this.curNbr2); break;
+                case "/": this.result = parseFloat(this.curNbr1) / parseFloat(this.curNbr2); break;
+                case "*": this.result = parseFloat(this.curNbr1) * parseFloat(this.curNbr2); break;
+                default: break;
+            }
+        }
+    }
 
     angular.module("adf.widget.calcSimple", ["adf.provider"])
         .config(["dashboardProvider", function (e) {
@@ -11,53 +54,7 @@
                 description: "Add, Subtract, Multiply and Divide ",
                 templateUrl: "{widgetsPath}/calcS/simpleCalc.html",
                 controller: "calcSimpleController",
-                reload: 0, // no refresh 
-                //result: 0, // Holds the actual result in memory
-                //operation: "", // add, subtract, multiply and divide
-                //curNbr1: "0", c1: false, d1: false, // flag that curNbr1 input and decimal have been provided
-                //curNbr2: "0", c2: false, d2: false, // flag that curNbr2 input and decimal have been provided
-                //curDisplay: "", // Shows the input string
-                //curResult: "", // Shows the full input and result
-                //keydownkeycode: "",
-                //keyupkeycode: "",
-                //keypresskeycode: "",
-                //reset: function () {
-                //    this.result = 0;
-                //    this.operation = "";
-                //    this.curNbr1 = "0"; this.c1 = false; this.d1 = false;
-                //    this.curNbr2 = "0"; this.c2 = false; this.d2 = false;
-                //    this.curDisplay = "";
-                //    this.curResult = "";
-                //},
-                //setOperation: function (operationToSet) {
-                //    if (this.c1 && this.c2) {
-                //        this.curNbr1 = this.result.toString();
-                //        this.c1 = true;
-                //        this.result = 0;
-                //        this.operation = operationToSet;
-                //        this.curNbr2 = "0"; this.c2 = false; this.d2 = false;
-                //        this.curDisplay = "";
-                //        this.curResult = this.curNbr1 + " " + this.operation + " ";
-                //    }
-                //    if (this.operation === "") {
-                //        this.operation = operationToSet;
-                //        if (!this.c1 && !this.c2 && this.curNbr1 !== "0") {
-                //            this.c1 = true;
-                //            this.curDisplay = "";
-                //            this.curResult += " " + this.operation + " ";
-                //        }
-                //    }
-                //},
-                //calculate: function () {
-                //    switch (this.operation) {
-                //        case "+": this.result = parseFloat(this.curNbr1) + parseFloat(this.curNbr2); break;
-                //        case "-": this.result = parseFloat(this.curNbr1) - parseFloat(this.curNbr2); break;
-                //        case "/": this.result = parseFloat(this.curNbr1) / parseFloat(this.curNbr2); break;
-                //        case "*": this.result = parseFloat(this.curNbr1) * parseFloat(this.curNbr2); break;
-                //        default: break;
-                //    }
-                //}
-
+                reload: 0 // no refresh
             })
         }])
 
