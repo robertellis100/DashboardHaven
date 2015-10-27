@@ -1,11 +1,12 @@
-<div ng-controller="RequestController">
-  <div ng-if="investment"><h5>{{investment.name.substr(0,investment.name.indexOf('('))}}</h5>
-  <p>As of {{investment.data[0][0] | date:'dd/MM/yyyy'}} {{investment.dataset_code}} closed at a price of {{investment.data[0][11] | currency}} and had a volume of {{investment.data[0][12] | number:0}}.</p>
+<div>
+  <div ng-if="investment">
+    <h5>{{investment.name.substr(0,investment.name.indexOf('('))}}</h5>
+    <p>As of {{investment.data[0][0] | date:'dd/MM/yyyy'}} {{investment.dataset_code}} closed at an adjusted price of {{investment.data[0][11] | currency}} and had a volume of {{investment.data[0][12] | number:0}}.</p>
   </div>
-  <form role="form">
+  <!--<form role="form">
     <div class="form-group">
       <input type="text" class="form-control" id="sample" ng-model="ticker" placeholder="Enter Company Name or Ticker">
       <button ng-click="getCompanyByTicker()" class="btn btn-primary">Get Info!</button>
     </div>
-  </form>
+  </form>-->
 </div>
