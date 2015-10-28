@@ -35,21 +35,21 @@
 .edit .column {
   min-height: 120px;
   border: 1px #ccc dashed;
-  padding-top: 15px;
+  padding-top: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
 pre.edit {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .column .placeholder {
   opacity: 0.4;
   background: #E8E8E8;
   border: 1px dashed #505050;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -79,5 +79,5 @@ pre.edit {
  modal dialog in fullscreen
 */
 .dashboard-modal.widget-fullscreen .modal-dialog {
- width: 98%;
+ width: 99%;
 }
