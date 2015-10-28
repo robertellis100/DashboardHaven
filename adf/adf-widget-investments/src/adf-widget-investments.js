@@ -1,4 +1,4 @@
-var app = angular.module('adf.widget.investments', ['adf.provider'])
+var app = angular.module('adf.widget.investments', ['adf.provider','chart.js'])
   .config(function(dashboardProvider){
     dashboardProvider
       .widget('investments', {
@@ -6,6 +6,7 @@ var app = angular.module('adf.widget.investments', ['adf.provider'])
         description: 'Current financial information on public companies',
         templateUrl: '{widgetsPath}/adf-widget-investments/src/view.html',
         controller: 'RequestController',
+        //controller2: 'LineCtrl',
         reload: true,
         resolve: {
           data: ["RequestService", "config", function(RequestService, config){
