@@ -1,5 +1,8 @@
-/nbproject/
-/node_modules/
-/build/
-/components/
-.tmp/
+.DS_Store
+
+node_modules/*
+custom/*
+
+docs/index.md
+
+.settings/
