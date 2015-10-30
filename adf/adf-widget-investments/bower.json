@@ -21,7 +21,8 @@
   ],
   "description": "Review your business....Fill this in later",
   "dependencies": {
-    "angular-dashboard-framework": "0.8.0"
+    "angular-dashboard-framework": "0.8.0",
+    "angular-chart.js": "~0.8.5"
   },
   "devDependencies": {
     "angular-local-storage": "0.1.5"

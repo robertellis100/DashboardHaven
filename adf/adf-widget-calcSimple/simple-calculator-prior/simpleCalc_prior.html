@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html ng-app="calcSimpleApp">
+<head>
+    <title>Simple Calculator</title>
+    <meta charset="utf-8" />
+    <link href="simpleCalc_prior.css" rel="stylesheet" />
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>-->
+</head>
+<body>
+    <div ng-controller="calcSimpleController">
+        <div class="section group">
+            <div class="col c5of5">{{ calcSimple.displayResult }}</div>
+        </div>
+        <div class="section group">
+            <div class="col c4of5">{{ calcSimple.currentDisplay }}</div>
+            <div ng-click="resetClicked()" class="col c1of5">C</div>
+        </div>
+        <div class="section group">
+            <div ng-click="numberButtonClicked(7)" class="col c1of5">7</div>
+            <div ng-click="numberButtonClicked(8)" class="col c1of5">8</div>
+            <div ng-click="numberButtonClicked(9)" class="col c1of5">9</div>
+            <div ng-click="operationButtonClicked(&#39;&#47;&#39;)" class="col c1of5">/</div>
+            <div ng-click="operationButtonClicked(&#39;&#42;&#39;)" class="col c1of5">*</div>
+        </div>
+        <div class="section group">
+            <div ng-click="numberButtonClicked(4)" class="col c1of5">4</div>
+            <div ng-click="numberButtonClicked(5)" class="col c1of5">5</div>
+            <div ng-click="numberButtonClicked(6)" class="col c1of5">6</div>
+            <div ng-click="operationButtonClicked(&#39;&#45;&#39;)" class="col c2of5">-</div>
+        </div>
+        <div class="section group">
+            <div ng-click="numberButtonClicked(1)" class="col c1of5">1</div>
+            <div ng-click="numberButtonClicked(2)" class="col c1of5">2</div>
+            <div ng-click="numberButtonClicked(3)" class="col c1of5">3</div>
+            <div ng-click="operationButtonClicked(&#39;&#43;&#39;)" class="col c2of5">+</div>
+        </div>
+        <div class="section group">
+            <div ng-click="numberButtonClicked(0)" class="col c1of5">0</div>
+            <div ng-click="numberButtonClicked(&#39;&#46;&#39;)" class="col c1of5">.</div>
+            <div ng-click="enterClicked()" class="col c3of5">Enter</div>
+        </div>
+
+        <div class="c5of5xl">
+            <center><p style="font-size:x-small">For entry, use mouse above or click in box below to use keyboard.</p></center>
+            <center><input type="number" ng-keypress="keypressevt()" class="inkey-box" /></center>
+        </div>
+        <div style="color:maroon">
+            {{ calcSimple.keypresskeycode }}
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="appSimpleCalc_prior.js"></script>
+
+</body>
+</html>

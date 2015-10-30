@@ -1,11 +1,21 @@
-<div ng-controller="RequestController">
-  <div ng-if="investment"><h5>{{investment.name.substr(0,investment.name.indexOf('('))}}</h5>
-  <p>As of {{investment.data[0][0] | date:'dd/MM/yyyy'}} {{investment.dataset_code}} closed at a price of {{investment.data[0][11] | currency}} and had a volume of {{investment.data[0][12] | number:0}}.</p>
+<div>
+  <div ng-if="investment">
+    <h5>{{investment.name.substr(0,investment.name.indexOf('('))}}</h5>
+    <p>As of {{investment.data[0][0] | date:'MM/dd/yyyy'}} {{investment.dataset_code}} closed at an adjusted price of {{investment.data[0][11] | currency}} and had a volume of {{investment.data[0][12] | number:0}}.</p>
+    <div class="btn-group text-center">
+     <span type="button" class="btn btn-default" ng-class="{active: active === 'week'}" ng-click="changeRange(5, 'week')">5 Days</span>
+     <span type="button" class="btn btn-default" ng-class="{active: active === 'month'}" ng-click="changeRange(20, 'month')">1 Month</span>
+     <span type="button" class="btn btn-default" ng-class="{active: active === 'months'}" ng-click="changeRange(60, 'months')">3 Months</span>
+     <span type="button" class="btn btn-default" ng-class="{active: active === 'year'}" ng-click="changeRange(260, 'year')">1 Year</span>
+    </div>
+    <canvas id="line" class="chart chart-line" chart-data="data"
+    chart-labels="labels" chart-legend="true" chart-series="series"
+    chart-click="onClick" >
   </div>
-  <form role="form">
+  <!--<form role="form">
     <div class="form-group">
       <input type="text" class="form-control" id="sample" ng-model="ticker" placeholder="Enter Company Name or Ticker">
       <button ng-click="getCompanyByTicker()" class="btn btn-primary">Get Info!</button>
     </div>
-  </form>
+  </form>-->
 </div>
