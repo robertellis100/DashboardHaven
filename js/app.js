@@ -1,4 +1,4 @@
-var app = angular.module('dashboardHaven', ['adf', 'adf.structures.base', 'adf.widget.clock', 'adf.widget.weather', 'adf.widget.news', 'adf.widget.investments', 'adf.widget.calcSimple']);
+var app = angular.module('dashboardHaven', ['adf', 'adf.structures.base', 'adf.widget.clock', 'adf.widget.weather', 'adf.widget.iframe' , 'adf.widget.news', 'adf.widget.investments', 'adf.widget.calcSimple']);
 
 app.controller('MainController', MainController) 
 
