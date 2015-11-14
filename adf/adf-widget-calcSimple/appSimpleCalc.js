@@ -128,9 +128,9 @@
         '<div ng-click="numberButtonClicked(0)" class="col c1of5">0</div>' +
         '<div ng-click="numberButtonClicked(&#39;&#46;&#39;)" class="col c1of5"><sup><b>.</b></sup></div>' +
         '<div ng-click="enterClicked()" class="col c3of5">Enter</div></div>' +
-        //'<div class="c5of5xl"><center><p style="font-size:small;color:white">' +
-        //'Use mouse above or click below for keyboard.</p></center><center>' +
-        //'<input type="number" ng-keypress="keypressevt()" class="inkey-box" /></center></div>' +
+        '<div class="c5of5xl"><center><p style="font-size:small;color:white">' +
+        'Use mouse above or click below for keyboard.</p></center><center>' +
+        '<input type="number" ng-keypress="keypressevt()" class="inkey-box" /></center></div>' +
         '</div>')
     }])
 }(window);
