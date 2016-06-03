@@ -23,7 +23,7 @@
  */
 'use strict';
 
-angular.module('adf.structures.base', ['adf','firebase'])
+angular.module('adf.structures.base', ['adf'])
   .config(function(dashboardProvider){
 
     dashboardProvider
